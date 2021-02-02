@@ -1,24 +1,56 @@
 # README
+# DB 設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users table
 
-Things you may want to cover:
+| Column             | Type                | Options                 |
+|--------------------|---------------------|-------------------------|
+| email              | string              | null: false             |
+| password           | string              | null: false             |
+| nickname           | string              | null: false             |
+| gender_id          | integer             | null: false             |
+| age_id             | integer             | null: false             |
 
-* Ruby version
+### Association
 
-* System dependencies
+* has_many :bansyakus
+* has_many :reviews
 
-* Configuration
+## bansyakus table
 
-* Database creation
+| Column                              | Type       | Options           |
+|-------------------------------------|------------|-------------------|
+| sake_name                           | string     | null: false       |
+| sake_id                             | integer    | null: false       |
+| image                               |            |                   |
+| warimono_id                         | integer    |                   |
+| one_tumami_name                     | string     | null: false       |
+| one_tumami_id                       | integer    | null: false       |
+| one_tumami_recipe                   | text       |                   |
+| image                               |            |                   |
+| two_tumami_name                     | string     |                   |
+| two_tumami_id                       | integer    |                   |
+| two_tumami_recipe                   | text       |                   |
+| image                               |            |                   |
+| cost_id                             | integer    | null:false        |
+| user_comment                        | text       |                   |
+| user                                | references |                   |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
+- has_many :reviews
 
-* Services (job queues, cache servers, search engines, etc.)
+## reviews table
 
-* Deployment instructions
+| Column      | Type       | Options           |
+|-------------|------------|-------------------|
+| user        | references | foreign_key: true |
+| bansyaku    | references | foreign_key: true |
+| comment     | text       | null: false       |
+| score       | integer    | null: false       |
 
-* ...
+### Association
+
+- belongs_to :bansyaku
+- belongs_to :user
