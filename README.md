@@ -13,10 +13,10 @@
 
 ### Association
 
-* has_many :bansyakus
+* has_many :bansyakuposts
 * has_many :reviews
 
-## bansyakus table
+## bansyakuposts table
 
 | Column                              | Type       | Options           |
 |-------------------------------------|------------|-------------------|
