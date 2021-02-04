@@ -32,7 +32,6 @@
 | two_tumami_id                       | integer    |                   |
 | two_tumami_recipe                   | text       |                   |
 | image                               |            |                   |
-| cost_id                             | integer    | null:false        |
 | user_comment                        | text       |                   |
 | user                                | references |                   |
 

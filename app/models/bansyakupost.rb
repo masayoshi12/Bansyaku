@@ -1,0 +1,2 @@
+class Bansyakupost < ApplicationRecord
+end
