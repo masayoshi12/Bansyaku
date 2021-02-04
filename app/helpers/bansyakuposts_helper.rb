@@ -1,0 +1,2 @@
+module BansyakupostsHelper
+end
