@@ -17,14 +17,17 @@
           <div class="nav__left">
             <%= link_to image_tag("rogo.png", class: :logo), root_path %>
           </div>
-            <%# <div class="nav__right"> %>
-              <%# <%= link_to "ログアウト", root_path, class: :nav__logout %>
-              <%# <%= link_to "New Proto", root_path, class: :nav__btn %>
-            <%# </div> %>
-            <div class="nav__right">
-              <%= link_to "ログイン", root_path, class: :nav__btn %>
-              <%= link_to "新規登録", root_path, class: :nav__btn %>
+            <% if user_signed_in? %>
+            <div class="nav__right"> 
+               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
+               <%= link_to "晩酌追加", root_path, class: :nav__btn %>
             </div>
+            <% else %>
+            <div class="nav__right">
+              <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
+              <%= link_to "新規ユーザー登録", new_user_registration_path, class: :nav__btn %>
+            </div>
+            <% end %>
         </div>
       </div>
     </header>
