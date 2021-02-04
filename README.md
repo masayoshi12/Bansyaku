@@ -13,10 +13,10 @@
 
 ### Association
 
-* has_many :bansyakus
+* has_many :bansyakuposts
 * has_many :reviews
 
-## bansyakus table
+## bansyakuposts table
 
 | Column                              | Type       | Options           |
 |-------------------------------------|------------|-------------------|
@@ -32,7 +32,6 @@
 | two_tumami_id                       | integer    |                   |
 | two_tumami_recipe                   | text       |                   |
 | image                               |            |                   |
-| cost_id                             | integer    | null:false        |
 | user_comment                        | text       |                   |
 | user                                | references |                   |
 
