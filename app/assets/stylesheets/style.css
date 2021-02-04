@@ -95,6 +95,11 @@ a {
   margin: 10px 0;
 }
 
+.select-box{
+  height: 30px;
+  width: 250px;
+}
+
 .actions{
   margin-bottom: 40px;
 }

@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 2021_02_04_075152) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_bansyakuposts_on_user_id"
   end
+  
+ActiveRecord::Schema.define(version: 2021_02_03_091101) do
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "provider"
