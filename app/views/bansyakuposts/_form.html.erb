@@ -1,0 +1,63 @@
+<%= form_with(model: @bansyakupost, local: true) do |f|%>
+
+  <div class="field">
+    <%= f.label :image, "お酒の画像　※必至" %><br />
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sake_name, "お酒の名前　※必至" %><br />
+    <%= f.text_field :sake_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sake_id, "お酒の種類　※必至" %><br />
+    <%= f.collection_select(:sake_id, Sake.all, :id, :name, {}, {class:"select-box"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :warimono_id, "お酒の割り物　※任意" %><br />
+    <%= f.collection_select(:warimono_id, Warimono.all, :id, :name, {}, {class:"select-box"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :one_tumami_name, "おつまみの名前　※必至" %><br />
+    <%= f.text_field :one_tumami_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :one_tumami_id, "おつまみの種類　※必至" %><br />
+    <%= f.collection_select(:one_tumami_id, One_tumami.all, :id, :name, {}, {class:"select-box"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :one_tumami_recipe, "おつまみの作り方　※任意" %><br />
+    <%= f.text_area :one_tumami_recipe %>
+  </div>
+
+    <div class="field">
+    <%= f.label :two_tumami_name, "おつまみの名前　※任意" %><br />
+    <%= f.text_field :two_tumami_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :two_tumami_id, "おつまみの種類　※任意" %><br />
+    <%= f.collection_select(:two_tumami_id, Two_tumami.all, :id, :name, {}, {class:"select-box"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :two_tumami_recipe, "おつまみの作り方　※任意" %><br />
+    <%= f.text_area :two_tumami_recipe %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_comment, "お好きなコメントをどうぞ" %><br />
+    <%= f.text_area :user_comment %>
+  </div>
+
+
+  
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>

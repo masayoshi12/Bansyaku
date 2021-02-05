@@ -3,10 +3,22 @@ class BansyakupostsController < ApplicationController
     @bansyakuposts = Bansyakupost.includes(:user)
   end
 
+  def new
+    @bansyakupost = Bansyakupost.new
+  end
+  
+  def create
+    @bansyakupost = Bansyakupost.new(bansyakupost_params)
+    if @bansyakupost.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
   private
   
-  def message_params
-    params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
+  def bansyakupost_params
+    params.require(:bansyakupost).permit(:image).merge(user_id: current_user.id)
   end
   
 end
