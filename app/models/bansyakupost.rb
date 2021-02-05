@@ -5,12 +5,12 @@ class Bansyakupost < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :sake
   belongs_to :warimono
-  belongs_to :one_tumami
-  belongs_to :two_tumami
+  belongs_to :onetumami
+  belongs_to :twotumami
 
   validates :sake_name, presence: true
   validates :sake_id, numericality: { other_than: 1 }  
-  validates :one_tumami_name, presence: true 
-  validates :one_tumami_id, numericality: { other_than: 1 }
+  validates :onetumami_name, presence: true 
+  validates :onetumami_id, numericality: { other_than: 1 }
 
 end

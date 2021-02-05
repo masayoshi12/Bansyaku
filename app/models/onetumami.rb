@@ -1,4 +1,4 @@
-class Two_tumami < ActiveHash::Base
+class Onetumami < ActiveHash::Base
   self.data = [
     { id: 1, name: '--' },
     { id: 2, name: 'お菓子' },

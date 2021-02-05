@@ -21,41 +21,39 @@
   </div>
 
   <div class="field">
-    <%= f.label :one_tumami_name, "おつまみの名前　※必至" %><br />
-    <%= f.text_field :one_tumami_name %>
+    <%= f.label :onetumami_name, "おつまみの名前　※必至" %><br />
+    <%= f.text_field :onetumami_name %>
   </div>
 
   <div class="field">
-    <%= f.label :one_tumami_id, "おつまみの種類　※必至" %><br />
-    <%= f.collection_select(:one_tumami_id, One_tumami.all, :id, :name, {}, {class:"select-box"}) %>
+    <%= f.label :onetumami_id, "おつまみの種類　※必至" %><br />
+    <%= f.collection_select(:onetumami_id, Onetumami.all, :id, :name, {}, {class:"select-box"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :one_tumami_recipe, "おつまみの作り方　※任意" %><br />
-    <%= f.text_area :one_tumami_recipe %>
+    <%= f.label :onetumami_recipe, "おつまみの作り方　※任意" %><br />
+    <%= f.text_area :onetumami_recipe %>
   </div>
 
     <div class="field">
-    <%= f.label :two_tumami_name, "おつまみの名前　※任意" %><br />
-    <%= f.text_field :two_tumami_name %>
+    <%= f.label :twotumami_name, "おつまみの名前　※任意" %><br />
+    <%= f.text_field :twotumami_name %>
   </div>
 
   <div class="field">
-    <%= f.label :two_tumami_id, "おつまみの種類　※任意" %><br />
-    <%= f.collection_select(:two_tumami_id, Two_tumami.all, :id, :name, {}, {class:"select-box"}) %>
+    <%= f.label :twotumami_id, "おつまみの種類　※任意" %><br />
+    <%= f.collection_select(:twotumami_id, Twotumami.all, :id, :name, {}, {class:"select-box"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :two_tumami_recipe, "おつまみの作り方　※任意" %><br />
-    <%= f.text_area :two_tumami_recipe %>
+    <%= f.label :twotumami_recipe, "おつまみの作り方　※任意" %><br />
+    <%= f.text_area :twotumami_recipe %>
   </div>
 
   <div class="field">
     <%= f.label :user_comment, "お好きなコメントをどうぞ" %><br />
     <%= f.text_area :user_comment %>
   </div>
-
-
   
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>

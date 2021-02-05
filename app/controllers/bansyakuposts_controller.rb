@@ -15,10 +15,11 @@ class BansyakupostsController < ApplicationController
       render :new
     end
   end
+  
   private
   
   def bansyakupost_params
-    params.require(:bansyakupost).permit(:image).merge(user_id: current_user.id)
+    params.require(:bansyakupost).permit(:image, :sake_name, :sake_id, :warimono_id, :onetumami_name, :onetumami_id, :onetumami_recipe, :twotumami_name, :twotumami_id, :twotumami_recipe, :user_comment).merge(user_id: current_user.id)
   end
   
 end
