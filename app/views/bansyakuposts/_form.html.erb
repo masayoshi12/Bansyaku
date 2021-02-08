@@ -1,18 +1,18 @@
-<%= form_with(model: @bansyakupost, local: true) do |f|%>
+<%= form_with(model: bansyakupost, local: true) do |f|%>
 
   <div class="field">
-    <%= f.label :image, "お酒の画像　※必至" %><br />
+    <%= f.label :image, "お酒の画像　※必須" %><br />
     <%= f.file_field :image %>
+    <div id="image-list"></div>
   </div>
-  <div id="image-list"></div>
-  
+
   <div class="field">
-    <%= f.label :sake_name, "お酒の名前　※必至" %><br />
+    <%= f.label :sake_name, "お酒の名前　※必須" %><br />
     <%= f.text_field :sake_name %>
   </div>
 
   <div class="field">
-    <%= f.label :sake_id, "お酒の種類　※必至" %><br />
+    <%= f.label :sake_id, "お酒の種類　※必須" %><br />
     <%= f.collection_select(:sake_id, Sake.all, :id, :name, {}, {class:"select-box"}) %>
   </div>
 
@@ -27,7 +27,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :onetumami_id, "おつまみの種類　※必至" %><br />
+    <%= f.label :onetumami_id, "おつまみの種類　※必須" %><br />
     <%= f.collection_select(:onetumami_id, Onetumami.all, :id, :name, {}, {class:"select-box"}) %>
   </div>
 
@@ -59,4 +59,5 @@
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>
   </div>
+
 <% end %>
