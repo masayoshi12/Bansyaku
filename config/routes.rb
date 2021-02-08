@@ -3,7 +3,6 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'
   }
-  get 'bansyakus/index'
-  root to: "bansyakus#index"
-  
+  root to: "bansyakuposts#index"
+  resources :bansyakuposts, only: [:new, :create, :show, :edit, :update, :destroy]  
 end
